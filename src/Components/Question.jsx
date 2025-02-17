@@ -12,13 +12,22 @@ export default function Question() {
   return (
 
     
-    <div className='mt-36 bg-white p-4'>
-        <h1>Qusetions and Answers About programming</h1>
+    <div className='w-[60%] flex justify-between mt-36 bg-white p-4'>
 
-        <div>
-            <div className='flex flex-col'>
-                <p></p>
+        
+        <h1 className='font-bold'>Qusetions and Answers <br /> About programming</h1>
+
+        <div className='flex flex-col gap-2 w-full  p-1'>
+            {Question.map(q=>{
+                return(
+                    <div key={q.id} className=' rounded-md p-2 bg-yellow-200 w-full flex flex-col '>
+             
+                 <p>{q.title}</p> 
+               
             </div>
+                )
+            })}
+            
         </div>
 
     </div>
