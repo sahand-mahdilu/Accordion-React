@@ -5,8 +5,15 @@ export default function Question() {
 
     
     const [Question,setQusetion]=useState(Datas)
+    const [isShowing,setIsshowing]=useState(false)
 
     console.log(Question);//array
+
+    const showInfo= ()=>{
+
+        setIsshowing(prev=>!prev)
+
+    }
 
 
   return (
@@ -20,9 +27,12 @@ export default function Question() {
         <div className='flex flex-col gap-2 w-full  p-1'>
             {Question.map(q=>{
                 return(
-                    <div key={q.id} className=' rounded-md p-2 bg-yellow-200 w-full flex flex-col '>
+                    <div onClick={showInfo} key={q.id} className=' rounded-md p-2 bg-yellow-200 w-full flex flex-col '>
              
-                 <p>{q.title}</p> 
+                 <p>{q.title}</p>
+
+                 {isShowing &&  <p>{q.info}</p>} 
+                 
                
             </div>
                 )
