@@ -1,11 +1,15 @@
 
 import './App.css'
+import Question from './Components/Question'
 
 function App() {
 
   return (
     <>
-      <h1 className='bg-red-500'>hello world </h1>
+    <div className=' flex justify-center items-center'>
+    <Question/>
+
+    </div>
     </>
   )
 }
