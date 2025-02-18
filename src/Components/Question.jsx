@@ -1,17 +1,11 @@
 import React, { useState } from 'react'
-import { Datas } from '../Datas.js/Datas'
+import AccordionHOC from '../HOCs/AccordionHOC';
 
-export default function Question() {
+ function Question({questions , toggleInfo}) {
 
-    const [questions, setQuestions] = useState(Datas.map(data => ({ ...data, isShowing: false })))
+    console.log(questions);
 
-    const toggleInfo = (id) => {
-        setQuestions(prevQuestions =>
-            prevQuestions.map(question =>
-                question.id === id ? { ...question, isShowing: !question.isShowing } : question
-            )
-        )
-    }
+  
 
     return (
         <div className='w-[60%] flex justify-between mt-36 bg-white p-4'>
@@ -27,3 +21,7 @@ export default function Question() {
         </div>
     )
 }
+
+
+
+export default AccordionHOC(Question)
